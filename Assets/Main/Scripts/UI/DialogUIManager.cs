@@ -6,6 +6,8 @@ using TMPro;
 
 public class DialogUIManager : MonoBehaviour
 {
+    private DialogueBranch branch;
+
     public GameObject background;
     public GameObject mainText;
     public GameObject responseTab;
@@ -50,6 +52,7 @@ public class DialogUIManager : MonoBehaviour
     public void NextBranch(int branchSelect)
     {
         // Add ReciveDialogueBranch with newBranch being next branch
+        RecieveDialogueBranch(branch.ResponseOption[branchSelect].nextBranch);
     }
 
     

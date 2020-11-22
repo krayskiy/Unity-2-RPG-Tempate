@@ -5,6 +5,7 @@ using TMPro;
 
 public class DialoguePoint : MonoBehaviour
 {
+    public DialogueBranch startBranch;
     public string info;
     public TextMeshProUGUI popup;
     public DialogUIManager dialogueMenu;
@@ -47,7 +48,7 @@ public class DialoguePoint : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        dialogueMenu.RecieveDialogueBranch(); // Add start branch here
+        dialogueMenu.RecieveDialogueBranch(startBranch); // Add start branch here
         popup.gameObject.SetActive(true);
         popup.text = "Press [E] to " + info;
         inDialogueZone = true;
