@@ -5,7 +5,7 @@ using TMPro;
 
 public class DialoguePoint : MonoBehaviour
 {
-    public DialogueBranch startBranch; 
+    public DialogueBranch startBranch;
     public string info;
     public TextMeshProUGUI popup;
     public DialogUIManager dialogueMenu;

@@ -53,47 +53,18 @@ public class DialogUIManager : MonoBehaviour
     {
         // Add ReciveDialogueBranch with newBranch being next branch
         RecieveDialogueBranch(branch.ResponseOption[branchSelect].nextBranch);
-        ActiveDialogue();
-        NextDialogue();
     }
 
     
-    public void RecieveDialogueBranch(DialogueBranch newBranch)
+    public void RecieveDialogueBranch()
     {
-        this.branch = newBranch;
-        responses = Mathf.Clamp(branch.ResponseOption.Count, 0,3);
-        currentIndex = 0;
+        // Add branch info here
     }
 
     public void NextDialogue()
     {
-        //If we have reached the end of the dialogue
-        if (currentIndex >= branch.DialogueLines.Count)
-        {
-            //there are no responses left
-            if (responses == 0) {
-                DeactiveDialogue();
-            } 
-            else {
-                
-                continueText.SetActive(false);
-                for (int i = 0; i < responses; i++)
-                {
-                    if (i >= 3)
-                    {
-                        break; //exits for loop if i is not equal to a valid index in our response list
-                    }
-                    //Activate button for response
-                    responsesHolder[i].gameObject.SetActive(true);
-                    //place response text
-                    responsesHolder[i].GetComponentInChildren<TextMeshProUGUI>().text = branch.ResponseOption[i].text;
-                }
-            }
-        } else {
-            //There is still text to show
-            mainText.GetComponent<TextMeshProUGUI>().text = branch.DialogueLines[currentIndex];
-            continueText.SetActive(true);
-            currentIndex++;
-        }
+        DeactiveDialogue(); // Remove this and
+       // add next Dialogue mechanism here
+
     }
 }
