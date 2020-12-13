@@ -25,7 +25,7 @@ public class MainMenuManager : MonoBehaviour
     public void ContinueGame()
     {
         Debug.Log("Continuing Game");
-        if (false) // Replace with Save finding code
+        if (SaveSystem.SaveFound()) 
         {
             StartGame();
             GameDatabase.GetComponent<SaveManager>().LoadGame();
